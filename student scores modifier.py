@@ -1,0 +1,31 @@
+def scale_exam_score(exam_score):
+    if 0<= exam_score <= 60:
+        return (exam_score / 60) * 70
+    else:
+        return "Invalid exam score please enter a number between 0 to 60"
+        
+def scale_test_score(test_score):
+    if 0 <= test_score <= 40:
+        return (test_score / 40) * 30
+    else:
+        return None
+    
+def main():
+    try:
+        exam_score = float(input("Enter the exam score out of 60: "))
+        test_score = float(input("Enter the test score out of 40: "))
+        
+        new_exam_scores = scale_exam_score(exam_score)
+        new_test_scores = scale_test_score(test_score)
+        if isinstance (new_exam_scores, str) or isinstance(new_test_scores, str):
+            print(new_exam_scores)
+            print(new_test_scores)
+     
+        else:
+            print(f"Scaled exam score: {new_exam_scores:.2f}")
+            print(f"Scaled test score : {new_test_scores:.2f}")
+    except ValueError:
+            print("Please enter a valid numeric number")
+
+            
+main()
